@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2022/12/31 11:49:37 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/07 12:38:48 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ void	print_z_matrix(fdf *data)
 		i++;
 	}
 }
+/*
+int	key_hook(int keycode, fdf *data)
+{
+	printf("keycode: %d\n", keycode);
+	return (0);
+}
+*/
 
 int	main(int argc, char **argv)
 {
@@ -47,6 +54,12 @@ int	main(int argc, char **argv)
 	check_arguments(argc);
 	data = (fdf *)malloc(sizeof(fdf));
 	read_map(argv[1], data);
-	print_z_matrix(data);
+	data->mlx_ptr = mlx_init();
+	data->win_ptr = mlx_new_window(data->mlx_ptr, 1000, 1000, "fdf");
+	data->zoom = 20;
+	
+	draw(data);
+	//mlx_key_hook(data->win, key_hook, NULL);
+	mlx_loop(data->mlx_ptr);
 	return (0);
 }
