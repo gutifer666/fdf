@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/07 12:38:48 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/09 08:46:52 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,23 @@ void	print_z_matrix(fdf *data)
 		i++;
 	}
 }
-/*
+
 int	key_hook(int keycode, fdf *data)
 {
+	
 	printf("keycode: %d\n", keycode);
+	if (keycode == 126)
+		data->shifting_y -= 10;
+	if (keycode == 125)
+		data->shifting_y += 10;
+	if (keycode == 123)
+		data->shifting_x -= 10;
+	if (keycode == 124)
+		data->shifting_x += 10;
+	mlx_clear_window(data->mlx_ptr, data->win_ptr);
+	draw(data);
 	return (0);
 }
-*/
 
 int	main(int argc, char **argv)
 {
@@ -59,7 +69,7 @@ int	main(int argc, char **argv)
 	data->zoom = 20;
 	
 	draw(data);
-	//mlx_key_hook(data->win, key_hook, NULL);
+	mlx_key_hook(data->win_ptr, key_hook, data);
 	mlx_loop(data->mlx_ptr);
 	return (0);
 }

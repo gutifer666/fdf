@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 08:27:27 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/07 13:00:49 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/09 08:34:51 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct // Estructura que contiene los datos de la matriz de alturas y la
 	int **z_matrix;
 	int	zoom;
 	int color;
+	int	shifting_x;
+	int	shifting_y;
 	
 	void	*mlx_ptr;
 	void	*win_ptr;

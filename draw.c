@@ -6,11 +6,22 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:36:29 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/07 13:17:48 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/09 08:36:13 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void    isometric(float *x, float *y, int z)
+{
+    float previous_x;
+    float previous_y;
+
+    previous_x = *x;
+    previous_y = *y;
+    *x = (previous_x - previous_y) * cos(0.523599);
+    *y = -z + (previous_x + previous_y) * sin(0.523599);
+}
 
 void    draw_line(float x, float y, float x1, float y1, fdf *data)
 {
@@ -20,19 +31,26 @@ void    draw_line(float x, float y, float x1, float y1, fdf *data)
     int z;
     int z1;
 
-    //z
     z = data->z_matrix[(int)y][(int)x];
     z1 = data->z_matrix[(int)y1][(int)x1];
-
-    //zoom
+ 
     x = x * data->zoom;
     y = y * data->zoom;
     x1 = x1 * data->zoom;
     y1 = y1 * data->zoom;
 
-    //color
-    data->color = (z) ? 0xFF0000 : 0x00FF00;
+    data->color = (z || z1) ? 0xFF0000 : 0x00FF00;
 
+    // 2D to 3D
+    isometric(&x, &y, z);
+    isometric(&x1, &y1, z1);
+
+    // Side scrolling
+    x += data->shifting_x;
+    y += data->shifting_y;
+    x1 += data->shifting_x;
+    y1 += data->shifting_y;
+    
     x_step = x1 - x;
     y_step = y1 - y;
     max = fmaxf(fabsf(x_step), fabsf(y_step));
@@ -40,7 +58,7 @@ void    draw_line(float x, float y, float x1, float y1, fdf *data)
     y_step /= max;
     while ((int)(x - x1) || (int)(y - y1))
     {
-        mlx_pixel_put(data->mlx_ptr, data->win_ptr, x, y, data->color);
+        mlx_pixel_put(data->mlx_ptr, data->win_ptr, x, y, data->color); 
         x += x_step;
         y += y_step;
     }
