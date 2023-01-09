@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 08:36:07 by frgutier          #+#    #+#             */
-/*   Updated: 2022/12/20 08:58:39 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/09 09:29:42 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ char	*read_file(int fd, char *accumulator)
 	if (buff == NULL)
 		return (NULL);
 	bytes_read = 1;
-	while (!ft_strchr_g(&accumulator[ft_strlen_g(accumulator) - bytes_read], '\n')
-		&& bytes_read)
+	while (!ft_strchr_g(&accumulator[ft_strlen_g(accumulator) - bytes_read],
+			'\n') && bytes_read)
 	{
 		bytes_read = read(fd, buff, BUFFER_SIZE);
 		if ((bytes_read == 0 && accumulator == NULL) || bytes_read < 0)

@@ -6,13 +6,13 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 10:13:02 by frgutier          #+#    #+#             */
-/*   Updated: 2022/12/31 11:46:55 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/09 09:37:02 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	get_map_dimensions(char *file, fdf *data)
+void	get_map_dimensions(char *file, t_fdf *data)
 {
 	int		fd;
 	char	*line;
@@ -41,7 +41,7 @@ void	get_map_dimensions(char *file, fdf *data)
 	close(fd);
 }
 
-void	allocate_z_matrix(fdf *data)
+void	allocate_z_matrix(t_fdf *data)
 {
 	int	i;
 
@@ -73,7 +73,7 @@ void	setting_row(char *line, int *row)
 	free(word_grid);
 }
 
-void	fill_z_matrix(char *file, fdf *data)
+void	fill_z_matrix(char *file, t_fdf *data)
 {
 	int		fd;
 	char	*line;
@@ -91,7 +91,7 @@ void	fill_z_matrix(char *file, fdf *data)
 	close(fd);
 }
 
-void	read_map(char *file_path, fdf *data)
+void	read_map(char *file_path, t_fdf *data)
 {
 	get_map_dimensions(file_path, data);
 	allocate_z_matrix(data);

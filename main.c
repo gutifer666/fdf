@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/09 08:46:52 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/09 09:35:21 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_arguments(int argc)
 	}
 }
 
-void	print_z_matrix(fdf *data)
+void	print_z_matrix(t_fdf *data)
 {
 	int	i;
 	int	j;
@@ -40,9 +40,8 @@ void	print_z_matrix(fdf *data)
 	}
 }
 
-int	key_hook(int keycode, fdf *data)
+int	key_hook(int keycode, t_fdf *data)
 {
-	
 	printf("keycode: %d\n", keycode);
 	if (keycode == 126)
 		data->shifting_y -= 10;
@@ -59,15 +58,14 @@ int	key_hook(int keycode, fdf *data)
 
 int	main(int argc, char **argv)
 {
-	fdf	*data;
+	t_fdf	*data;
 
 	check_arguments(argc);
-	data = (fdf *)malloc(sizeof(fdf));
+	data = (t_fdf *)malloc(sizeof(t_fdf));
 	read_map(argv[1], data);
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, 1000, 1000, "fdf");
-	data->zoom = 20;
-	
+	data->zoom = 20;	
 	draw(data);
 	mlx_key_hook(data->win_ptr, key_hook, data);
 	mlx_loop(data->mlx_ptr);
