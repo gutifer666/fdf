@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 08:27:27 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/09 10:17:02 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/11 10:53:29 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,26 @@ typedef struct s_point
 	float		z;
 }	t_point;
 
+/*
+**	Keys
+*/
+
+// shiffing
+# define ARROW_UP			126
+# define ARROW_DOWN			125
+# define ARROW_LEFT			123
+# define ARROW_RIGHT		124
+// zoom
+# define KEY_PLUS			69
+# define KEY_MINUS			78
+// other
+# define KEY_ESC			53
+
 void	read_map(char *file_name, t_fdf *data);
 void	draw(t_fdf *data);
+int		key_hook(int keycode, t_fdf *data);
+void	isometric(t_point *s_point, t_point *f_point);
+void	zoom(t_point *s_point, t_point *f_point, t_fdf *data);
+void	shitfting(t_point *s_point, t_point *f_point, t_fdf *data);
+void	init(t_fdf *data);
 #endif
