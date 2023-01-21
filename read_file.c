@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 10:13:02 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/09 09:37:02 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/21 19:44:01 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	setting_row(char *line, int *row)
 	i = 0;
 	while (word_grid[i])
 	{
-		row[i] = ft_atoi(word_grid[i]);
+		row[i] = ft_atoi(word_grid[i]) * 10;
 		free(word_grid[i]);
 		i++;
 	}
