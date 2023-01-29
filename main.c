@@ -6,12 +6,13 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/28 20:18:04 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/29 09:01:52 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"fdf.h"
 
+	/*
 void	check_arguments(int argc)
 {
 	if (argc != 2)
@@ -20,19 +21,33 @@ void	check_arguments(int argc)
 		exit(1);
 	}
 }
+	*/
+/*
+	==23752==    by 0x1000035CF: allocate_z_matrix (read_file.c:54)
+	==23752==    by 0x100003755: read_map (read_file.c:97)
+	==23752==    by 0x100003414: main (main.c:32)
+*/
+/*
+valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=valgrind-out.txt \
+         ./fdf test_maps/42.fdf
+*/
 
 int	main(int argc, char **argv)
 {
 	t_fdf	*data;
-
-	check_arguments(argc);
+	(void)argc;
+	//check_arguments(argc);
 	data = (t_fdf *)malloc(sizeof(t_fdf));
 	read_map(argv[1], data);
 	init(data);
 	draw(data);
 	mlx_key_hook(data->win_ptr, key_hook, data);
-	system("leaks -q fdf");
+	system("leaks fdf");
 	ft_printf("Fin del programa\n");
 	mlx_loop(data->mlx_ptr);
-	return (0);	
+	return (0);
 }

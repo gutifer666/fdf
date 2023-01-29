@@ -1,5 +1,6 @@
 FRAEMWORKS=-framework OpenGL -framework AppKit
 FLAGS=-Werror -Wextra -Wall
+DEBUG=-ggdb3
 NAME=fdf
 SRC=*.c
 INCLUDES=libft/libft.a mlx/libmlx.a
