@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/29 09:01:52 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:42:51 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ int	main(int argc, char **argv)
 	init(data);
 	draw(data);
 	mlx_key_hook(data->win_ptr, key_hook, data);
-	system("leaks fdf");
-	ft_printf("Fin del programa\n");
 	mlx_loop(data->mlx_ptr);
 	return (0);
 }

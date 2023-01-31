@@ -8,7 +8,7 @@ INCLUDES=libft/libft.a mlx/libmlx.a
 all:
 	@make -C libft/ all
 	@make -C mlx/ all
-	gcc $(SRC) -o $(NAME) $(FLAGS) $(INCLUDES) $(FRAEMWORKS)
+	gcc $(SRC) -o $(NAME) $(FLAGS) $(INCLUDES) $(FRAEMWORKS) $(DEBUG)
 
 clean:
 	@make -C libft/ clean

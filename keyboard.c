@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 08:35:14 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/28 18:22:49 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:45:47 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 int	key_hook(int keycode, t_fdf *data)
 {
 	printf("keycode: %d\n", keycode);
-	if (keycode == KEY_ESC)
+	if (keycode == KEY_ESC){
+		free(data);
+		system("leaks fdf");
+		ft_printf("Fin del programa\n");
 		exit(0);
+	}
 	if (keycode == ARROW_UP)
 		data->shifting_y -= 10;
 	if (keycode == ARROW_DOWN)
