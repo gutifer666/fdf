@@ -1,1 +1,3 @@
 .vscode
+fdf.dSYM
+valgrind-out.txt

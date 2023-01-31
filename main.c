@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/31 08:11:09 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/31 08:29:40 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
+		check_fd = 0;
 		data = (t_fdf *)malloc(sizeof(t_fdf));
-		read_map(argv[1], data);
+		read_map(argv[1], data, &check_fd);
 		init(data);
 		draw(data);
 		mlx_key_hook(data->win_ptr, key_hook, data);

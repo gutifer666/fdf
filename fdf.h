@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 08:27:27 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/11 10:53:29 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/31 08:32:32 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_point
 // other
 # define KEY_ESC			53
 
-void	read_map(char *file_name, t_fdf *data);
+void	read_map(char *file_name, t_fdf *data, int *check_fd);
 void	draw(t_fdf *data);
 int		key_hook(int keycode, t_fdf *data);
 void	isometric(t_point *s_point, t_point *f_point);

@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 10:13:02 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/29 08:43:15 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/01/31 08:36:19 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,9 @@ void	fill_z_matrix(char *file, t_fdf *data)
 	close(fd);
 }
 
-void	read_map(char *file_path, t_fdf *data)
+void	read_map(char *file_path, t_fdf *data, int *check_fd)
 {
+	(void) check_fd;
 	get_map_dimensions(file_path, data);
 	allocate_z_matrix(data);
 	fill_z_matrix(file_path, data);
