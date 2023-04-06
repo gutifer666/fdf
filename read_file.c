@@ -12,6 +12,20 @@
 
 #include "fdf.h"
 
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		split[i] = NULL;
+		i++;
+	}
+	free(split);
+}
+
 void	get_map_dimensions(char *file, t_fdf *data)
 {
 	int		fd;
@@ -33,8 +47,9 @@ void	get_map_dimensions(char *file, t_fdf *data)
 			while (word_grid[data->width])
 			{
 				data->width++;
-				free(word_grid[data->width]);
+				//free(word_grid[data->width]);
 			}
+			free_split(word_grid);
 		}			
 		free(line);
 	}

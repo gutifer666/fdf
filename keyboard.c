@@ -15,6 +15,8 @@
 int	key_hook(int keycode, t_fdf *data)
 {
 	printf("keycode: %d\n", keycode);
+	if (keycode == KEY_ESC)
+		exit(0);
 	if (keycode == ARROW_UP)
 		data->shifting_y -= 10;
 	if (keycode == ARROW_DOWN)

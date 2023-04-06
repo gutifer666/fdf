@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 {
 	t_fdf	*data;
 
+	atexit(leaks);
 	check_arguments(argc);
 	data = (t_fdf *)malloc(sizeof(t_fdf));
 	read_map(argv[1], data);
@@ -37,6 +38,5 @@ int	main(int argc, char **argv)
 	draw(data);
 	mlx_key_hook(data->win_ptr, key_hook, data);
 	mlx_loop(data->mlx_ptr);
-	atexit(leaks);
 	return (0);
 }
