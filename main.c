@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/28 17:28:30 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:26:44 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_arguments(int argc)
 		exit(1);
 	}
 }
-
+// Comprueba los leaks
 void	leaks(void)
 {
 	system("leaks -q fdf");
