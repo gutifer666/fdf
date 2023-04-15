@@ -6,25 +6,11 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 10:13:02 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/08 09:50:56 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/15 10:50:24 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-void	free_split(char **split)
-{
-	int	i;
-
-	i = 0;
-	while (split[i])
-	{
-		free(split[i]);
-		split[i] = NULL;
-		i++;
-	}
-	free(split);
-}
 
 void	get_map_dimensions(char *file, t_fdf *data)
 {
