@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 10:32:29 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 12:07:04 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/15 12:18:43 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_arguments(int argc, char **argv)
 	}
 	if (open(argv[0], O_RDONLY) == -1)
 	{
-		ft_printf("Error al abrir el fichero: %s\n", strerror(errno));
+		perror("Error al abrir el fichero:");
 		close(open(argv[0], O_RDONLY));
 		exit(1);
 	}
