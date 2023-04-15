@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 10:13:02 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/21 20:08:41 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/08 09:50:56 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	get_map_dimensions(char *file, t_fdf *data)
 			while (word_grid[data->width])
 			{
 				data->width++;
-				//free(word_grid[data->width]);
 			}
 			free_split(word_grid);
 		}			
