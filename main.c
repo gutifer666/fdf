@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 10:41:00 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/15 11:13:20 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_fdf	*data;
 
 	atexit(leaks);
-	check_arguments(argc);
+	check_arguments(argc, &argv[1]);
 	data = (t_fdf *)malloc(sizeof(t_fdf));
 	read_map(argv[1], data);
 	init(data);
