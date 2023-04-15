@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 08:27:27 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 11:14:59 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/15 12:03:47 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include	"libft/libft.h"
 # include	<fcntl.h>
 # include	<math.h>
+# include	<string.h>
+# include	<errno.h>
 # include	<stdio.h>
 
 typedef struct s_fdf
