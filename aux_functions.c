@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 10:32:29 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 10:37:16 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/15 10:43:00 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,9 @@ void	check_arguments(int argc)
 		ft_printf("Utiliza una ruta de fichero válida: ./fdf <file_path>\n");
 		exit(1);
 	}
+}
+
+void	leaks(void)
+{
+	system("leaks -q fdf");
 }

@@ -6,16 +6,11 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 09:52:23 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 10:33:09 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/15 10:41:00 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"fdf.h"
-
-void	leaks(void)
-{
-	system("leaks -q fdf");
-}
 
 int	main(int argc, char **argv)
 {
