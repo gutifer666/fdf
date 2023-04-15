@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:36:29 by frgutier          #+#    #+#             */
-/*   Updated: 2023/01/11 10:53:34 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/15 14:12:13 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ void	draw_line(t_point s_point, t_point final_point, t_fdf *data)
 
 	s_point.z = data->z_matrix[(int)s_point.y][(int)s_point.x];
 	final_point.z = data->z_matrix[(int)final_point.y][(int)final_point.x];
+	rotation(&s_point, &final_point, data);
 	zoom(&s_point, &final_point, data);
-	if (s_point.z || final_point.z)
-		data->color = 0xFF0000;
-	else
-		data->color = 0x00FF00;
+	data->color = 0xFF0000;
 	isometric(&s_point, &final_point);
 	shitfting(&s_point, &final_point, data);
 	x_step = final_point.x - s_point.x;
