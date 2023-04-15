@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 08:27:27 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 12:19:13 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/15 12:43:34 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_fdf
 	int		color;
 	int		shifting_x;
 	int		shifting_y;
+	int		rot_x;
+	int		rot_y;
 	void	*mlx_ptr;
 	void	*win_ptr;
 }	t_fdf;
