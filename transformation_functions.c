@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 08:53:36 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 13:28:53 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/16 10:33:39 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ void	isometric(t_point *s_point, t_point *f_point)
 	previous_y = f_point->y;
 	f_point->x = (previous_x - previous_y) * cos(0.523599);
 	f_point->y = -f_point->z + (previous_x + previous_y) * sin(0.523599);
+}
+
+void	parallel(t_point *s_point, t_point *f_point)
+{
+	s_point->x = s_point->x;
+	s_point->y = s_point->y;
+	f_point->x = f_point->x;
+	f_point->y = f_point->y;
 }
 
 void	zoom(t_point *s_point, t_point *f_point, t_fdf *data)

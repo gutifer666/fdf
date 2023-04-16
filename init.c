@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:23:09 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 13:33:21 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/16 10:33:30 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void	init(t_fdf *data)
 	data->zoom = 20;
 	data->rot_x = 0;
 	data->rot_y = 0;
+	data->projection = 1;
 }

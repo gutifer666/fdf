@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 08:35:14 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 14:05:59 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/04/16 10:33:32 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,17 @@ void	rotation_keys(int keycode, t_fdf *data)
 		data->rot_y -= 0.1;
 }
 
+void	projection_keys(int keycode, t_fdf *data)
+{
+	if (keycode == KEY_P)
+	{
+		if (data->projection == 1)
+			data->projection = 2;
+		else
+			data->projection = 1;
+	}
+}
+
 int	key_hook(int keycode, t_fdf *data)
 {
 	printf("keycode: %d\n", keycode);
@@ -60,6 +71,7 @@ int	key_hook(int keycode, t_fdf *data)
 	shifting_keys(keycode, data);
 	zoom_keys(keycode, data);
 	rotation_keys(keycode, data);
+	projection_keys(keycode, data);
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
 	draw(data);
 	return (0);
