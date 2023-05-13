@@ -25,6 +25,7 @@ $(NAME): $(OBJ)
 clean:
 	@make -C libft/ clean
 	@make -C mlx/ clean
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
