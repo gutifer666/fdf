@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 08:27:27 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/16 10:33:36 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/05/13 10:24:14 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,6 @@ void	leaks(void);
 void	free_split(char **split);
 void	rotation(t_point *s_point, t_point *f_point, t_fdf *data);
 void	parallel(t_point *s_point, t_point *f_point);
+int		close_window(t_fdf *data);
+
 #endif

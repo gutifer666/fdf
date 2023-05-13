@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 10:32:29 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/15 12:18:43 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/05/13 10:25:52 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,10 @@ void	free_split(char **split)
 		i++;
 	}
 	free(split);
+}
+
+int	close_window(t_fdf *data)
+{
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	exit(EXIT_SUCCESS);
 }

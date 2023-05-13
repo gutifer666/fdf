@@ -6,7 +6,7 @@
 /*   By: frgutier <frgutier@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 08:35:14 by frgutier          #+#    #+#             */
-/*   Updated: 2023/04/16 10:33:32 by frgutier         ###   ########.fr       */
+/*   Updated: 2023/05/13 10:27:00 by frgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	projection_keys(int keycode, t_fdf *data)
 
 int	key_hook(int keycode, t_fdf *data)
 {
-	printf("keycode: %d\n", keycode);
 	if (keycode == KEY_ESC)
 		exit(0);
 	if (keycode == KEY_R)
